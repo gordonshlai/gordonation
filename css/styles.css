@@ -18,16 +18,20 @@
 /* Typography */
 ::selection {
   background: var(--color-primary);
-  color: white;
+  color: #fff;
 }
 
 html {
   font-size: 62.5%;
 }
 
+img {
+  width: 100%;
+}
+
 body {
   font-family: Inter, Arial, Helvetica, sans-serif;
-  font-size: 2.4rem;
+  font-size: 2rem;
   line-height: 1.5;
   color: var(--color-body);
 }
@@ -41,7 +45,7 @@ h3 {
 }
 
 h1 {
-  font-size: 7rem;
+  font-size: 6rem;
 }
 
 h2 {
@@ -49,12 +53,12 @@ h2 {
 }
 
 h3 {
-  font-size: 3rem;
-  font-weight: 500;
+  font-size: 2.8rem;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 p {
-  /* to prevent margin collapsing, let the header element to take care of the margin. */
   margin-top: 0;
 }
 
@@ -76,11 +80,6 @@ p {
   }
 }
 
-.container {
-  max-width: 1140px;
-  margin: 0 auto;
-}
-
 /* Links */
 a {
   text-decoration: none;
@@ -96,11 +95,11 @@ a {
 .link-arrow::after {
   content: "-->";
   margin-left: 5px;
+  transition: margin 0.15s;
 }
 
 .link-arrow:hover::after {
   margin-left: 10px;
-  transition: margin 0.15s;
 }
 
 @media screen and (min-width: 1024px) {
@@ -120,12 +119,12 @@ a {
 
 .badge--primary {
   background: var(--color-primary);
-  color: white;
+  color: #fff;
 }
 
 .badge--secondary {
   background: var(--color-secondary);
-  color: white;
+  color: #fff;
 }
 
 .badge--small {
@@ -187,7 +186,7 @@ a {
 }
 
 .icon--white {
-  fill: white;
+  fill: #fff;
 }
 
 .icon-container {
@@ -228,7 +227,7 @@ a {
 
 .btn--primary {
   background: var(--color-primary);
-  color: white;
+  color: #fff;
 }
 
 .btn--primary:hover {
@@ -237,16 +236,16 @@ a {
 
 .btn--secondary {
   background: var(--color-secondary);
-  color: white;
+  color: #fff;
 }
 
 .btn--secondary:hover {
-  background: #00c8eb;
+  background: #05cdf0;
 }
 
 .btn--accent {
   background: var(--color-accent);
-  color: white;
+  color: #fff;
 }
 
 .btn--accent:hover {
@@ -254,14 +253,14 @@ a {
 }
 
 .btn--outline {
-  background: white;
+  background: #fff;
   color: var(--color-headings);
   border: 2px solid var(--color-headings);
 }
 
 .btn--outline:hover {
   background: var(--color-headings);
-  color: white;
+  color: #fff;
 }
 
 .btn--stretched {
@@ -280,7 +279,7 @@ a {
   }
 }
 
-/* Input */
+/* Inputs */
 .input {
   border-radius: var(--border-radius);
   border: 1px solid var(--color-border);
@@ -326,25 +325,25 @@ a {
 
 .card__header,
 .card__body {
-  padding: 2rem 4rem;
+  padding: 2rem 7%;
 }
 
 .card--primary .card__header {
   background: var(--color-primary);
-  color: white;
+  color: #fff;
 }
 
 .card--secondary .card__header {
   background: var(--color-secondary);
-  color: white;
+  color: #fff;
 }
 
 .card--primary .badge--primary {
-  background-color: #126de4;
+  background: #126de4;
 }
 
 .card--secondary .badge--secondary {
-  background-color: #02cdf1;
+  background: #02cdf1;
 }
 
 /* Plans */
@@ -353,18 +352,18 @@ a {
 }
 
 .plan__name {
-  color: white;
+  color: #fff;
   margin: 0;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 2.4rem;
 }
 
 .plan__price {
-  font-size: 6rem;
+  font-size: 5rem;
 }
 
 .plan__billing-cycle {
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 300;
   opacity: 0.8;
   margin-right: 1rem;
@@ -379,10 +378,6 @@ a {
 
 .plan .list__item {
   margin-bottom: 2rem;
-}
-
-.plan--popular {
-  transform: scale(1.1);
 }
 
 .plan--popular .card__header {
@@ -407,6 +402,10 @@ a {
 }
 
 @media screen and (min-width: 1024px) {
+  .plan--popular {
+    transform: scale(1.1);
+  }
+
   .plan__name {
     font-size: 1.4rem;
   }
@@ -441,7 +440,6 @@ a {
 .media__image {
   margin-top: 1rem;
 }
-
 /* Quotes */
 .quote {
   font-size: 3rem;
@@ -459,7 +457,7 @@ a {
 }
 
 .quote__author {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 500;
   font-style: normal;
   margin-bottom: 0;
@@ -468,7 +466,7 @@ a {
 .quote__organization {
   color: var(--color-headings);
   opacity: 0.4;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-style: normal;
 }
 
@@ -491,7 +489,7 @@ a {
   }
 }
 
-/* Grid */
+/* Grids */
 .grid {
   display: grid;
 }
@@ -508,17 +506,19 @@ a {
   }
 }
 
-/* Testimonial */
+/* Testimonials */
 .testimonial {
   padding: 3rem;
 }
 
-.testimonial__image {
-  position: relative;
+.testimonial .quote {
+  margin: 2rem 0;
+  font-size: 110%;
 }
 
-.testimonial__image > img {
-  width: 100%;
+.testimonial__image {
+  position: relative;
+  margin: 0 3rem;
 }
 
 .testimonial__image > .icon-container {
@@ -528,13 +528,14 @@ a {
 }
 
 @media screen and (min-width: 768px) {
-  .testimonial .quote,
-  .testimonial .quote__author {
-    font-size: 2.4rem;
+  .testimonial__image {
+    margin: 0;
   }
 
   .testimonial .quote {
-    margin-left: 6rem;
+    margin: 5rem 0 0 6rem;
+    font-size: 120%;
+    line-height: 1.5;
   }
 }
 
@@ -546,11 +547,11 @@ a {
 
 .callout--primary {
   background: var(--color-primary);
-  color: white;
+  color: #fff;
 }
 
 .callout__heading {
-  color: white;
+  color: #fff;
   margin-top: 0;
   font-size: 3rem;
 }
@@ -579,7 +580,7 @@ a {
   }
 }
 
-/* Collapsoble */
+/* Collapsibles */
 .collapsible__header {
   display: flex;
   justify-content: space-between;
@@ -613,7 +614,7 @@ a {
 
 /* Blocks */
 .block {
-  --padding-vertical: 6rem;
+  --padding-vertical: 5rem;
   padding: var(--padding-vertical) 2rem;
 }
 
@@ -634,17 +635,22 @@ a {
 .block--dark h1,
 .block--dark h2,
 .block--dark h3 {
-  color: white;
+  color: #fff;
 }
 
 .block--skewed-right {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 95%);
 }
 
 .block--skewed-left {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 0% 100%);
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
 /* Navigation Bar */
@@ -653,7 +659,7 @@ a {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 0 1rem;
+  padding: 1rem;
   align-items: center;
 }
 
@@ -665,6 +671,10 @@ a {
 .nav__item {
   padding: 0.5rem 2rem;
   border-bottom: 1px solid #222;
+}
+
+.nav__item:last-of-type {
+  border-bottom: none;
 }
 
 .nav__item > a {
@@ -690,6 +700,7 @@ a {
 
 .nav__brand {
   transform: translateY(5px);
+  width: 150px;
 }
 
 @media screen and (min-width: 768px) {
@@ -711,6 +722,7 @@ a {
 }
 
 /* Hero */
+
 .hero__tagline {
   font-size: 2rem;
   color: #b9c3cf;
@@ -718,18 +730,16 @@ a {
   margin: 2rem 0 5rem;
 }
 
-.hero__image {
-  width: 100%;
-}
-
 @media screen and (min-width: 768px) {
-  .hero {
-    padding-top: 0;
-  }
-
   .hero__content {
     text-align: left;
     align-self: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero {
+    padding-top: 0;
   }
 }
 
@@ -769,7 +779,7 @@ a {
   margin: 0 auto;
 }
 
-/* Feature */
+/* Features */
 .feature {
   gap: 4rem 2rem;
   margin: 12rem 0;
@@ -783,10 +793,6 @@ a {
   margin: 1rem 0;
 }
 
-.feature__image {
-  width: 100%;
-}
-
 @media screen and (min-width: 768px) {
   .feature:nth-of-type(even) .feature__content {
     order: 2;
@@ -794,10 +800,6 @@ a {
 }
 
 /* Showcase Block */
-.block-showcase__image > img {
-  width: 100%;
-}
-
 @media screen and (min-width: 768px) {
   .block-showcase .grid {
     grid-template-columns: 50% 50%;
@@ -816,15 +818,16 @@ a {
 /* Footer */
 .footer {
   background: #232323;
+  padding-top: 10rem;
 }
 
 .footer a {
   color: #777;
+  transition: color 0.3s;
 }
 
 .footer a:hover {
-  color: white;
-  transition: color 0.3s;
+  color: #fff;
 }
 
 .footer__section {
@@ -839,6 +842,8 @@ a {
 .footer__heading {
   text-transform: uppercase;
   font-weight: 600;
+  font-size: 2.5rem;
+  line-height: 1.5;
 }
 
 .footer__brand {
@@ -847,14 +852,12 @@ a {
 }
 
 .footer__brand img {
-  /* TODO: Consider refactoring this and applying it to all images */
-  width: 100%;
   max-width: 230px;
 }
 
 .footer__copyright {
   font-size: 2.1rem;
-  color: white;
+  color: #fff;
   opacity: 0.3;
 }
 
@@ -862,7 +865,6 @@ a {
   .footer {
     font-size: 1.5rem;
   }
-
   .footer__sections {
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
@@ -892,4 +894,9 @@ a {
   .footer__heading {
     font-size: 1.6rem;
   }
+}
+
+/* Sign-up Callout */
+.callout-signup {
+  transform: translateY(5rem);
 }
