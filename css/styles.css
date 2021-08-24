@@ -1,3 +1,5 @@
+@import './normalize.css';
+
 :root {
   --color-primary: #2584ff;
   --color-secondary: #00d9ff;
@@ -93,7 +95,7 @@ a {
 }
 
 .link-arrow::after {
-  content: "-->";
+  content: '-->';
   margin-left: 5px;
   transition: margin 0.15s;
 }
